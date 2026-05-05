@@ -1,0 +1,32 @@
+{
+  "id": "u12345",
+  "firstName": "Rahul",
+  "lastName": "Sharma",
+  "username": "rahul_dev",
+  "email": "rahul.sharma@example.com",
+  "phone": "+91-9876543210",
+  "age": 26,
+  "gender": "male",
+  "dateOfBirth": "1999-05-14",
+  "isActive": true,
+  "role": "Software Engineer",
+  "address": {
+    "street": "123 MG Road",
+    "city": "Bangalore",
+    "state": "Karnataka",
+    "country": "India",
+    "zipCode": "560001"
+  },
+  "skills": ["JavaScript", "React", "Node.js", "MongoDB"],
+  "experience": {
+    "years": 3,
+    "currentCompany": "Tech Solutions Pvt Ltd"
+  },
+  "preferences": {
+    "language": "English",
+    "theme": "dark",
+    "notifications": true
+  },
+  "createdAt": "2026-04-20T10:30:00Z",
+  "updatedAt": "2026-04-20T10:30:00Z"
+}

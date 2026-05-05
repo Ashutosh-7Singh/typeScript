@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <thead>
+      <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Role</th>
+        <th>City</th>
+      </tr>
+    </thead>
+    <tbody>
+        <script>
+  // fetch() sends a request to get the file "data.json"
+  // It returns a Promise (meaning the result will come later, not immediately)
+  fetch('data.json')
+
+    // .then() runs when the fetch request is successful
+    // "response" is the raw response from the file (not usable JSON yet)
+    .then(response => response.json())
+
+    // response.json() also returns a Promise
+    // This .then() runs after JSON is converted into JavaScript object
+    // "data" now contains your actual JSON data (usually an array of users)
+    .then(data => {
+
+      // Select the <tbody> inside the table with id="userTable"
+      // This is where we will insert rows dynamically
+      const tbody = document.querySelector('#userTable tbody');
+
+      // Loop through each user in the data array
+      // "user" represents one object at a time
+      data.forEach(user => {
+
+        // Create a new <tr> (table row) element
+        const row = document.createElement('tr');
+
+        // Insert data into the row using template literals (` `)
+        // ${} is used to inject JavaScript values into HTML
+        // Each <td> is one column in the table
+        row.innerHTML = `
+          <td>${user.id}</td>                 <!-- user ID -->
+          <td>${user.firstName}</td>          <!-- first name -->
+          <td>${user.lastName}</td>           <!-- last name -->
+          <td>${user.email}</td>              <!-- email -->
+          <td>${user.phone}</td>              <!-- phone -->
+          <td>${user.role}</td>               <!-- role/job -->
+          <td>${user.address.city}</td>       <!-- nested value (city inside address) -->
+        `;
+
+        // Append (add) the row into the tbody
+        // This makes it visible in the table
+        tbody.appendChild(row);
+      });
+    })
+
+    // .catch() runs if any error occurs
+    // Example: file not found, wrong path, server not running
+    .catch(error => console.error('Error:', error));
+</script>
+    </tbody>
+    </table>
+</body>
+</html>
