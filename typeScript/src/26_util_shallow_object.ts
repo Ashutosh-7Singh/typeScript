@@ -65,3 +65,8 @@ address:{
 type RoleK='admin'|'user' |'editor'
 type RoleCheck=Record<RoleK,User10>
 
+const dirN10:RoleCheck={
+  admin:{id:"u10",name:"admin",address:{line1:"line1",city:"city"}},
+  user:{id:"u10",name:"user",address:{line1:"line1",city:"city"}},
+  editor:{id:"u10",name:"editor",address:{line1:"line1",city:"city"}},
+}
